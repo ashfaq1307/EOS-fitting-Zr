@@ -84,6 +84,7 @@ EOS-fitting-Zr/
 ├── Zr_EOS_residuals.png    # Residuals plot
 ├── Zr_EOS_parameters.png   # Parameter comparison
 ├── Zr_EOS_quality.png      # Fit quality comparison
+|── Zr_EOS_quality.png      # Fit quality comparison
 └── README.md
 ```
 
