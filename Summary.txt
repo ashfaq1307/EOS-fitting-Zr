@@ -1,0 +1,37 @@
+Project Title:
+Comparative EOS Fitting of Zirconium Energy–Volume Data Using Python
+
+
+Problem Statement:
+
+In computational materials science, understanding how a material responds to changes in volume is crucial for predicting its mechanical stability, compressibility, and equation-of-state behavior. Zirconium, a technically important transition metal, is widely used in advanced engineering and nuclear applications, where accurate estimation of equilibrium properties is essential. However, extracting reliable parameters such as equilibrium energy, equilibrium volume, bulk modulus, and pressure derivative from raw energy–volume data requires robust mathematical fitting and comparison across multiple EOS models.
+The challenge is to develop a Python-based curve-fitting solution that reads the provided Zirconium energy–volume dataset and fits it to four different equations of state: Murnaghan, Birch–Murnaghan, Vinet–Rose, and Poirier–Tarantola. The program must estimate E0, V0​, B0​, and B0′  for each model and compare the quality of fit to determine which EOS best represents the dataset.
+
+
+Aim:
+To design and implement a Python script that analyzes Zirconium energy–volume data and performs nonlinear fitting using four EOS models in order to extract equilibrium material properties and evaluate the most suitable equation of state for the given data.
+
+Expected Outcome:
+A Python-based EOS fitting framework capable of analyzing energy–volume data and delivering precise material parameters for Zirconium, along with a comparative assessment of the four EOS formulations.
+
+
+                                                *Full Summary*                                              |
+                                            ________________________                                        |
+                                                                                                            |
+Fitted EOS Parameters — Zirconium                                                                           |
+                                                                                                            |
+Model               E₀(Ry/atom)     V₀ (Å³/atom)    B₀ (GPa)    B₀'       R² (%)     RMSE (mRy)             |
+Murnaghan           −0.730978       18.796          165.797     11.721    85.999     5.543                  |
+Birch–Murnaghan     −0.747576       22.800          117.343     3.439     99.999     0.048                  |
+Vinet–Rose          −0.747583       22.814          87.916      3.212     99.9998    0.023                  |
+Poirier–Tarantola   −0.747584       22.815          87.925      1.197     99.9998    0.022                  |
+
+Best Model: Poirier–Tarantola (R² = 99.999775 %)
+______________________________
+
+The Poirier–Tarantola logarithmic EOS achieves the lowest RMSE (0.022 mRy) and highest R² (99.9998%), making it the most statistically reliable fit for this dataset. The Vinet–Rose model is essentially tied with it — both are far superior to Murnaghan.
+
+Why Murnaghan fails here: It converges to unphysical parameters (B₀ ≈ 166 GPa, B₀' ≈ 12), because Murnaghan is a 1st-order EOS that breaks down when the volume range spans a large compression — which is the case in this dataset (V spans ~111–190 bohr³/atom, a ~70% range). The other three models handle large compressions correctly.
+
+Physical context for Zr: The fitted V₀ ≈ 22.8 Å³/atom and B₀ ≈ 88 GPa from the best-fit models are consistent with experimental values for hcp Zirconium (experimental B₀ ≈ 83–92 GPa), validating the fitting quality.
+
