@@ -19,7 +19,7 @@ In computational materials science, fitting DFT energy–volume data to an EOS i
 
 ## Results Summary
 
-| Model | E₀ (Ry/atom) | V₀ (Å³/atom) | B₀ (GPa) | B₀′ | R² (%) | RMSE (mRy) |
+| Model | E₀ (Ry/atom) | V₀ (Å^3/atom) | B₀ (GPa) | B₀′ | R^2 (%) | RMSE (mRy) |
 |---|---|---|---|---|---|---|
 | Murnaghan | −0.730978 | 18.796 | 165.797 | 11.721 | 85.9989 | 5.5426 |
 | Birch–Murnaghan | −0.747576 | 22.800 | 117.343 | 3.439 | 99.9990 | 0.0477 |
@@ -28,7 +28,7 @@ In computational materials science, fitting DFT energy–volume data to an EOS i
 
 **Best Model: Poirier–Tarantola** (lowest RMSE, highest R²)
 
-The fitted V₀ ≈ 22.8 Å³/atom and B₀ ≈ 88 GPa are consistent with experimental values for hcp Zr (B₀ ≈ 83–92 GPa).
+The fitted V₀ ≈ 22.8 Å^3/atom and B₀ ≈ 88 GPa are consistent with experimental values for hcp Zr (B₀ ≈ 83–92 GPa).
 
 ---
 
@@ -91,9 +91,9 @@ EOS-fitting-Zr/
 
 ## Physical Notes
 
-- Input data is in atomic units: **bohr³/atom** (volume) and **Ry/atom** (energy)
-- Unit conversions applied internally: 1 bohr³ = 0.148185 Å³, 1 Ry/bohr³ = 14710.5 GPa
-- Murnaghan EOS fails here because the volume range spans ~70% compression (111–190 bohr³/atom), beyond its valid 1st-order approximation
+- Input data is in atomic units: **bohr^3/atom** (volume) and **Ry/atom** (energy)
+- Unit conversions applied internally: 1 bohr^3 = 0.148185 Å^3, 1 Ry/bohr^3 = 14710.5 GPa
+- Murnaghan EOS fails here because the volume range spans ~70% compression (111–190 bohr^3/atom), beyond its valid 1st-order approximation
 - Vinet–Rose and Poirier–Tarantola are recommended for large-compression datasets
 
 ---
